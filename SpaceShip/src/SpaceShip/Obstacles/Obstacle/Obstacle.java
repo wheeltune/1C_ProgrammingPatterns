@@ -1,12 +1,12 @@
 package SpaceShip.Obstacles.Obstacle;
 
-import SpaceShip.Origin;
+import SpaceShip.Geometry.Point;
 
 public abstract class Obstacle {
-    public Origin origin;
+    public Point origin;
     public int background_color;
 
-    public Obstacle(Origin origin, int background_color) {
+    public Obstacle(Point origin, int background_color) {
         this.origin = origin;
         this.background_color = background_color;
     }

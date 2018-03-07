@@ -1,15 +1,14 @@
 package SpaceShip.Obstacles.ObstaclesFactory;
 
+import SpaceShip.Geometry.Point;
 import SpaceShip.Obstacles.Obstacle.Obstacle;
 import SpaceShip.Obstacles.Obstacle.ObstacleCircle;
 import SpaceShip.Obstacles.Obstacle.ObstacleSquare;
 import SpaceShip.Obstacles.Obstacle.ObstacleTriangle;
-import SpaceShip.Origin;
-import SpaceShip.Point;
 
 public class ObstaclesFactoryIce extends ObstaclesFactory {
     @Override
-    public Obstacle getObstacle(ObstacleType obstacle_type, Origin origin) {
+    public Obstacle getObstacle(ObstacleType obstacle_type, Point origin) {
         switch (obstacle_type) {
             case SQUARE:
                 return new ObstacleSquare(

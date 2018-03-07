@@ -1,4 +1,4 @@
-package SpaceShip;
+package SpaceShip.Geometry;
 
 public class Point {
     public float x;
