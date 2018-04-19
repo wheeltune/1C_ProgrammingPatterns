@@ -3,37 +3,33 @@ package SpaceShip.Obstacles.ObstaclesFactory;
 import SpaceShip.Geometry.Point;
 import SpaceShip.Obstacles.Obstacle.Obstacle;
 import SpaceShip.Obstacles.Obstacle.ObstacleCircle;
-import SpaceShip.Obstacles.Obstacle.ObstacleSquare;
+import SpaceShip.Obstacles.Obstacle.ObstacleRectangle;
 import SpaceShip.Obstacles.Obstacle.ObstacleTriangle;
+
+import java.awt.*;
 
 public class ObstaclesFactoryWater extends ObstaclesFactory {
     @Override
-    public Obstacle getObstacle(ObstacleType obstacle_type, Point origin) {
+    public Obstacle getObstacle(ObstacleType obstacle_type) {
         switch (obstacle_type) {
-            case SQUARE:
-                return new ObstacleSquare(
-                        origin,
-                        3,
+            case RECTANGLE:
+                return new ObstacleRectangle(
                         new Point[]{
                                 new Point(0, 0),
-                                new Point(0, 0)
-                        });
+                                new Point(50, 50)
+                        },
+                        Color.YELLOW);
             case CIRCLE:
-                return new ObstacleCircle(
-                        origin,
-                        3,
-                        2);
+                return new ObstacleCircle(50, Color.YELLOW);
             case TRIANGLE:
                 return new ObstacleTriangle(
-                        origin,
-                        3,
                         new Point[]{
                                 new Point(0, 0),
-                                new Point(0, 0),
-                                new Point(0, 0),
-                        });
+                                new Point(50, 0),
+                                new Point(25, 50),
+                        },
+                        Color.YELLOW);
         }
-
-        return null;
+        return getObstacle(obstacle_type);
     }
 }

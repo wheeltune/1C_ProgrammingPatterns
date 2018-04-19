@@ -1,15 +1,17 @@
 package SpaceShip.Obstacles.Obstacle;
 
-import SpaceShip.Geometry.Point;
+import SpaceShip.Geometry.GameObject;
 
-public abstract class Obstacle {
-    public Point origin;
-    public int background_color;
+import java.awt.*;
 
-    public Obstacle(Point origin, int background_color) {
-        this.origin = origin;
+public abstract class Obstacle implements GameObject {
+    protected Color background_color;
+
+    public Obstacle(Color background_color) {
         this.background_color = background_color;
     }
 
-    public abstract void draw();
+    public Color getBackgroundColor() {
+        return background_color;
+    }
 }

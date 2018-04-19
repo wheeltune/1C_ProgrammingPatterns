@@ -1,18 +1,31 @@
 package SpaceShip.Obstacles.Obstacle;
 
-import SpaceShip.Geometry.Point;
+import java.awt.*;
 
 public class ObstacleCircle extends Obstacle {
-    public float radius;
+    private int radius;
 
-    public ObstacleCircle(Point origin, int background_color, int radius) {
-        super(origin, background_color);
+    public ObstacleCircle(int radius, Color background_color) {
+        super(background_color);
 
         this.radius = radius;
     }
 
     @Override
-    public void draw() {
+    public int getHeight() {
+        return 2 * radius;
+    }
 
+    @Override
+    public int getWidth() {
+        return 2 * radius;
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        Color temp_color = g.getColor();
+        g.setColor(background_color);
+        g.fillArc(radius, radius, radius, radius, 0, 360);
+        g.setColor(temp_color);
     }
 }

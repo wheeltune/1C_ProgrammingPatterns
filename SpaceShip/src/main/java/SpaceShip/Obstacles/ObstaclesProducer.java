@@ -17,6 +17,6 @@ public class ObstaclesProducer {
                 return new ObstaclesFactoryWater();
         }
 
-        return null;
+        return getObstaclesFactory(obstacles_type);
     }
 }
